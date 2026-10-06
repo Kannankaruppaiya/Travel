@@ -1,0 +1,17 @@
+# Large decompiled folders
+decompiled-apktool/
+decompiled-jadx/
+decompiled-js/
+decompiled-native/
+
+# Large binaries & zips in tools
+tools/jadx/
+tools/jadx-*.zip
+tools/apktool.jar
+tools/penpot-gen/node_modules/
+node_modules/
+
+# OS and temp
+*.tmp
+.DS_Store
+Thumbs.db
