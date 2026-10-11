@@ -1,0 +1,98 @@
+# Wanderlog Android v2.223 - lodging booking sources (Hermes disassembly excerpt)
+
+
+Function<>4363(8 params, 22 registers, 1 numbers, 1 non-pointers):
+    CreateFunctionEnvironment r2, 5
+    LoadParam         r5, 2
+    LoadParam         r3, 6
+    LoadParam         r4, 7
+    CreateClosure     r6, r2, Function<getGuestRatingText>19077
+    StoreToEnvironment r2, 3, r6
+    GetGlobalObject   r7
+    TryGetById        r10, r7, 0, "Object"
+    GetByIdShort      r9, r10, 1, "defineProperty"
+    LoadConstString   r8, "__esModule"
+    NewObjectWithBufferLong r7, 6, 176659
+    Call4             r7, r9, r10, r3, r8, r7
+    CreateClosure     r7, r2, Function<getAirbnbWanderlogRating>19078
+    PutByIdLooseLong  r3, r7, 0, "getAirbnbWanderlo"...
+    PutByIdLoose      r3, r6, 1, "getGuestRatingTex"...
+    CreateClosure     r6, r2, Function<getLodgingRatingInfo>19074
+    PutByIdLooseLong  r3, r6, 2, "getLodgingRatingI"...
+    CreateClosure     r6, r2, Function<getNormalizedLodgingGuestRating>19075
+    PutByIdLoose      r3, r6, 3, "getNormalizedLodg"...
+    CreateClosure     r6, r2, Function<getSourceGuestRating>19076
+    PutByIdLooseLong  r3, r6, 4, "getSourceGuestRat"...
+    LoadConstUndefined r1
+    PutByIdLoose      r3, r1, 5, "lodgingBookingSou"...
+    PutByIdLoose      r3, r1, 6, "lowRatingCountThr"...
+    GetByIndex        r6, r4, 0
+    Call2             r6, r5, r1, r6
+    GetByIndex        r7, r4, 1
+    Call2             r7, r5, r1, r7
+    StoreToEnvironment r2, 0, r7
+    GetByIndex        r4, r4, 2
+    Call2             r5, r5, r1, r4
+    StoreToEnvironment r2, 1, r5
+    LoadConstUInt8    r0, 10
+    StoreNPToEnvironment r2, 2, r0
+    NewObject         r4
+    GetById           r7, r6, 2, "LodgingBookingSou"...
+    GetById           r8, r7, 3, "kayak"
+    GetById           r7, r5, 4, "RatingOrReviewSou"...
+    GetById           r7, r7, 3, "kayak"
+    DefineOwnByVal    r4, r7, r8, 1
+    GetById           r7, r6, 2, "LodgingBookingSou"...
+    GetById           r8, r7, 5, "expedia"
+    GetById           r7, r5, 4, "RatingOrReviewSou"...
+    GetById           r7, r7, 5, "expedia"
+    DefineOwnByVal    r4, r7, r8, 1
+    GetById           r7, r6, 2, "LodgingBookingSou"...
+    GetById           r8, r7, 6, "airbnb"
+    GetById           r7, r5, 4, "RatingOrReviewSou"...
+    GetById           r7, r7, 6, "airbnb"
+    DefineOwnByVal    r4, r7, r8, 1
+    GetById           r6, r6, 2, "LodgingBookingSou"...
+    GetById           r6, r6, 7, "google"
+    GetById           r5, r5, 4, "RatingOrReviewSou"...
+    GetById           r5, r5, 7, "google"
+    DefineOwnByVal    r4, r5, r6, 1
+    PutByIdLoose      r3, r4, 5, "lodgingBookingSou"...
+    LoadConstUInt8    r0, 20
+    PutByIdLoose      r3, r0, 6, "lowRatingCountThr"...
+    StoreNPToEnvironment r2, 4, r0
+    Ret               r1
+
+Function<>4364(8 params, 17 registers, 0 numbers, 1 non-pointers):
+    LoadParam         r2, 6
+    GetGlobalObject   r1
+    TryGetById        r5, r1, 0, "Object"
+    GetByIdShort      r4, r5, 1, "defineProperty"
+    LoadConstString   r3, "__esModule"
+    NewObjectWithBufferLong r1, 6, 176659
+    Call4             r1, r4, r5, r2, r3, r1
+    LoadConstUndefined r0
+    PutByIdLoose      r2, r0, 0, "LodgingBookingSou"...
+    PutByIdLoose      r2, r0, 1, "defaultLodgingBoo"...
+    NewObject         r3
+    LoadConstString   r1, "kayak"
+    PutByIdLoose      r3, r1, 2, "kayak"
+    LoadConstString   r1, "expedia"
+    PutByIdLoose      r3, r1, 3, "expedia"
+    LoadConstString   r1, "airbnb"
+    PutByIdLoose      r3, r1, 4, "airbnb"
+    LoadConstString   r1, "google"
+    PutByIdLoose      r3, r1, 5, "google"
+    PutByIdLoose      r2, r3, 0, "LodgingBookingSou"...
+    GetById           r4, r3, 2, "airbnb"
+    NewArray          r1, 4
+    DefineOwnInDenseArray r1, r4, 0
+    GetById           r4, r3, 3, "expedia"
+    DefineOwnInDenseArray r1, r4, 1
+    GetById           r4, r3, 4, "kayak"
+    DefineOwnInDenseArray r1, r4, 2
+    GetById           r3, r3, 5, "google"
+    DefineOwnInDenseArray r1, r3, 3
+    PutByIdLoose      r2, r1, 1, "defaultLodgingBoo"...
+    Ret               r0
+

@@ -1,0 +1,294 @@
+# Wanderlog Android v2.223 - email import handling (Hermes disassembly excerpt)
+# Source: assets/index.android.bundle (Hermes bytecode v98), disassembled with hbcdump built from facebook/hermes @ 40b4c8d4e (hermes-compiler 250829098.0.19).
+# Long string operands are truncated by hbcdump (shown as "..."); full texts are in key-ui-strings.txt.
+
+# ---- 1. ReceivedEmailError enum (note lodgingMissingAddress = "airbnbMissingAddress") ----
+    CreateFunctionEnvironment r5, 5
+    LoadParam         r6, 2
+    LoadParam         r2, 6
+    LoadParam         r4, 7
+    GetGlobalObject   r1
+    TryGetById        r8, r1, 0, "Object"
+    GetByIdShort      r7, r8, 1, "defineProperty"
+    LoadConstString   r3, "__esModule"
+    NewObjectWithBufferLong r1, 6, 176659
+    Call4             r1, r7, r8, r2, r3, r1
+    LoadConstUndefined r0
+    PutByIdLoose      r2, r0, 0, "ReceivedEmailErro"...
+    CreateClosure     r1, r5, Function<getEmailErrorButtonLabel>23552
+    PutByIdLoose      r2, r1, 1, "getEmailErrorButt"...
+    CreateClosure     r1, r5, Function<getEmailErrorMessage>23551
+    PutByIdLoose      r2, r1, 2, "getEmailErrorMess"...
+    PutByIdLoose      r2, r0, 3, "pendingButtonLabe"...
+    PutByIdLoose      r2, r0, 4, "pendingMessage"
+    GetByIndex        r1, r4, 0
+    Call2             r1, r6, r0, r1
+    GetByIndex        r3, r4, 1
+    Call2             r3, r6, r0, r3
+    StoreToEnvironment r5, 0, r3
+    GetByIndex        r3, r4, 2
+    Call2             r3, r6, r0, r3
+    StoreToEnvironment r5, 1, r3
+    GetByIndex        r4, r4, 3
+    Call2             r4, r6, r0, r4
+    StoreToEnvironment r5, 2, r4
+    NewObject         r4
+    LoadConstStringLongIndex r6, "airbnbMissingAddr"...
+    PutByIdLoose      r4, r6, 5, "lodgingMissingAdd"...
+    LoadConstString   r6, "llmRequestError"
+    PutByIdLoose      r4, r6, 6, "llmRequestError"
+    LoadConstString   r6, "llmNoResponseErro"...
+    PutByIdLoose      r4, r6, 7, "llmNoResponseErro"...
+    LoadConstString   r6, "notSupportedReser"...
+    PutByIdLoose      r4, r6, 8, "notSupportedReser"...
+    LoadConstString   r6, "retryJobFailed"
+    PutByIdLoose      r4, r6, 9, "retryJobFailed"
+    LoadConstString   r6, "messageFromLodgin"...
+    PutByIdLoose      r4, r6, 10, "messageFromLodgin"...
+    LoadConstString   r6, "nonReservationEma"...
+    PutByIdLoose      r4, r6, 11, "nonReservationEma"...
+    LoadConstString   r6, "deletedTripOrMail"...
+    PutByIdLoose      r4, r6, 12, "deletedTripOrMail"...
+    LoadConstString   r6, "emptyEmail"
+    PutByIdLoose      r4, r6, 13, "emptyEmail"
+    LoadConstString   r6, "incompleteAddress"
+    PutByIdLoose      r4, r6, 14, "incompleteAddress"
+    LoadConstString   r6, "timedOut"
+    PutByIdLoose      r4, r6, 15, "timedOut"
+    PutByIdLoose      r2, r4, 0, "ReceivedEmailErro"...
+    StoreToEnvironment r5, 3, r4
+    GetByIdShort      r6, r1, 2, "wrapWithT"
+    LoadConstString   r4, "We couldn't parse"...
+    Call2             r4, r6, r0, r4
+    StoreToEnvironment r5, 4, r4
+    GetByIdShort      r5, r1, 2, "wrapWithT"
+    NewObjectWithBufferLong r4, 989, 1079694
+    GetById           r3, r3, 3, "maxCharsPerLineEm"...
+    PutOwnBySlotIdx   r4, r3, 1
+    LoadConstString   r3, "Load"
+    Call3             r3, r5, r0, r3, r4
+    PutByIdLoose      r2, r3, 3, "pendingButtonLabe"...
+    GetByIdShort      r3, r1, 2, "wrapWithT"
+    LoadConstString   r1, "In queue to get y"...
+    Call2             r1, r3, r0, r1
+    PutByIdLoose      r2, r1, 4, "pendingMessage"
+    Ret               r0
+
+Function<>6679(8 params, 20 registers, 0 numbers, 1 non-pointers):
+    CreateFunctionEnvironment r6, 1
+    LoadParam         r2, 6
+    GetGlobalObject   r1
+    TryGetById        r5, r1, 0, "Object"
+    GetByIdShort      r4, r5, 1, "defineProperty"
+    LoadConstString   r3, "__esModule"
+
+# ---- 2. Supported / not-supported / non-reservation email types ----
+    NewObjectWithBufferLong r1, 6, 176659
+    Call4             r1, r4, r5, r2, r3, r1
+    LoadConstUndefined r0
+    PutByIdLoose      r2, r0, 0, "NonEmailReservati"...
+    PutByIdLoose      r2, r0, 1, "NotSupportedEmail"...
+    PutByIdLoose      r2, r0, 2, "SupportedEmailRes"...
+    CreateClosure     r1, r6, Function<hasNonReservationType>23553
+    PutByIdLooseLong  r2, r1, 3, "hasNonReservation"...
+    PutByIdLoose      r2, r0, 4, "reservationTypeTo"...
+    PutByIdLoose      r2, r0, 5, "stringToReservati"...
+    LoadParam         r1, 7
+    GetByIndex        r3, r1, 0
+    LoadParam         r1, 2
+    Call2             r3, r1, r0, r3
+    NewObject         r5
+    LoadConstString   r1, "flight"
+    PutByIdLoose      r5, r1, 6, "flight"
+    LoadConstString   r1, "transit"
+    PutByIdLoose      r5, r1, 7, "transit"
+    LoadConstString   r1, "cruise"
+    PutByIdLoose      r5, r1, 8, "cruise"
+    LoadConstString   r1, "lodging"
+    PutByIdLoose      r5, r1, 9, "lodging"
+    LoadConstString   r1, "rentalCar"
+    PutByIdLoose      r5, r1, 10, "rentalCar"
+    LoadConstString   r1, "restaurant"
+    PutByIdLoose      r5, r1, 11, "restaurant"
+    LoadConstString   r1, "ferry"
+    PutByIdLoose      r5, r1, 12, "ferry"
+    PutByIdLoose      r2, r5, 2, "SupportedEmailRes"...
+    NewObject         r4
+    LoadConstString   r1, "transportation"
+    PutByIdLoose      r4, r1, 13, "transportation"
+    LoadConstString   r1, "activityOrTour"
+    PutByIdLoose      r4, r1, 14, "activityOrTour"
+    PutByIdLoose      r2, r4, 1, "NotSupportedEmail"...
+    NewObject         r1
+    LoadConstString   r7, "marketing"
+    PutByIdLoose      r1, r7, 15, "marketing"
+    LoadConstString   r7, "cancellation"
+    PutByIdLoose      r1, r7, 16, "cancellation"
+    LoadConstString   r7, "flightCheckIn"
+    PutByIdLoose      r1, r7, 17, "flightCheckIn"
+    LoadConstString   r7, "recommendations"
+    PutByIdLoose      r1, r7, 18, "recommendations"
+    LoadConstString   r7, "quoteOrOfferToBoo"...
+    PutByIdLoose      r1, r7, 19, "quoteOrOfferToBoo"...
+    LoadConstString   r7, "message"
+    PutByIdLoose      r1, r7, 20, "message"
+    LoadConstString   r7, "rsvpRequest"
+    PutByIdLoose      r1, r7, 21, "rsvpRequest"
+    LoadConstString   r7, "receipt"
+    PutByIdLoose      r1, r7, 22, "receipt"
+    PutByIdLoose      r2, r1, 0, "NonEmailReservati"...
+    StoreToEnvironment r6, 0, r1
+    NewObjectWithBufferLong r1, 3925, 215699
+    GetById           r6, r5, 2, "flight"
+    PutOwnBySlotIdx   r1, r6, 0
+    GetById           r6, r5, 3, "lodging"
+    PutOwnBySlotIdx   r1, r6, 1
+    GetById           r6, r5, 4, "rentalCar"
+    PutOwnBySlotIdx   r1, r6, 2
+    GetById           r6, r5, 5, "transit"
+    PutOwnBySlotIdx   r1, r6, 3
+    GetById           r6, r5, 5, "transit"
+    PutOwnBySlotIdx   r1, r6, 4
+    GetById           r6, r4, 6, "activityOrTour"
+    PutOwnBySlotIdx   r1, r6, 5
+    GetById           r6, r5, 7, "restaurant"
+    PutOwnBySlotIdx   r1, r6, 6
+    GetById           r6, r4, 8, "transportation"
+    PutOwnBySlotIdx   r1, r6, 7
+    GetById           r6, r4, 8, "transportation"
+    PutOwnBySlotIdx   r1, r6, 8
+    GetById           r6, r4, 8, "transportation"
+    PutOwnBySlotIdx   r1, r6, 9
+    GetById           r6, r5, 9, "ferry"
+    PutOwnBySlotIdx   r1, r6, 10
+    GetById           r5, r5, 10, "cruise"
+    PutOwnBySlotIdx   r1, r5, 11
+    PutByIdLoose      r2, r1, 5, "stringToReservati"...
+    NewObject         r1
+    GetById           r6, r4, 6, "activityOrTour"
+    GetByIdShort      r8, r3, 11, "wrapWithT"
+    LoadConstString   r7, "activity/tour"
+    NewObjectWithBufferLong r5, 815, 1079700
+    Call3             r7, r8, r0, r7, r5
+    NewArray          r5, 1
+    DefineOwnInDenseArray r5, r7, 0
+    DefineOwnByVal    r1, r5, r6, 1
+    GetById           r4, r4, 8, "transportation"
+    GetByIdShort      r6, r3, 11, "wrapWithT"
+    LoadConstString   r5, "taxi/shuttle/car "...
+    NewObjectWithBufferLong r3, 815, 1079705
+    Call3             r5, r6, r0, r5, r3
+    NewArray          r3, 1
+    DefineOwnInDenseArray r3, r5, 0
+    DefineOwnByVal    r1, r3, r4, 1
+    PutByIdLoose      r2, r1, 4, "reservationTypeTo"...
+    Ret               r0
+
+
+# ---- 3. getEmailErrorMessage: which error shows which message ----
+
+Function<getEmailErrorMessage>23551(3 params, 18 registers, 0 numbers, 1 non-pointers):
+    GetParentEnvironment r1, 0
+    CreateFunctionEnvironment r3, 1
+    LoadParam         r5, 1
+    LoadParam         r2, 2
+    StoreToEnvironment r3, 0, r2
+    LoadConstNull     r0
+    JStrictEqualLong  L1, r0, r5
+    LoadFromEnvironment r4, r1, 3
+    GetById           r6, r4, 0, "lodgingMissingAdd"...
+    JStrictEqualLong  L2, r6, r5
+    GetById           r6, r4, 1, "incompleteAddress"
+    JStrictEqualLong  L3, r6, r5
+    GetById           r6, r4, 2, "notSupportedReser"...
+    JStrictEqualLong  L4, r6, r5
+    GetById           r6, r4, 3, "messageFromLodgin"...
+    JStrictEqualLong  L5, r6, r5
+    GetById           r6, r4, 4, "nonReservationEma"...
+    JStrictEqual      L6, r6, r5
+    GetById           r6, r4, 5, "emptyEmail"
+    JStrictEqual      L7, r6, r5
+    GetById           r6, r4, 6, "retryJobFailed"
+    JStrictEqual      L8, r6, r5
+    GetById           r6, r4, 7, "llmRequestError"
+    JStrictEqual      L8, r6, r5
+    GetById           r6, r4, 8, "llmNoResponseErro"...
+    JStrictEqual      L8, r6, r5
+    GetById           r6, r4, 9, "deletedTripOrMail"...
+    JStrictEqual      L8, r6, r5
+    GetById           r4, r4, 10, "timedOut"
+    JStrictEqual      L8, r4, r5
+    LoadFromEnvironment r4, r1, 0
+    GetByIdShort      r4, r4, 11, "getUnreachableErr"...
+    LoadConstUndefined r0
+    Call2             r4, r4, r0, r5
+    LoadFromEnvironment r4, r1, 4
+    Call2             r4, r4, r0, r2
+    Ret               r4
+L8:
+    LoadFromEnvironment r4, r1, 4
+    LoadConstUndefined r0
+    Call2             r4, r4, r0, r2
+    Ret               r4
+L7:
+    LoadConstString   r4, "This email lacks "...
+    LoadConstUndefined r0
+    Call2             r4, r2, r0, r4
+    Ret               r4
+L6:
+    LoadConstString   r4, "This email is not"...
+    LoadConstUndefined r0
+    Call2             r4, r2, r0, r4
+    Ret               r4
+L5:
+    NewObjectWithBuffer r5, 8363, 14944
+    GetGlobalObject   r4
+    TryGetById        r7, r4, 12, "Object"
+    GetByIdShort      r6, r7, 13, "values"
+    LoadFromEnvironment r4, r1, 2
+    GetById           r4, r4, 14, "NotSupportedEmail"...
+    Call2             r7, r6, r7, r4
+    GetById           r6, r7, 15, "flatMap"
+    CreateClosure     r4, r3, NCFunction<>45616
+    Call2             r4, r6, r7, r4
+    PutOwnBySlotIdx   r5, r4, 0
+    LoadConstString   r4, "This email contai"...
+    LoadConstUndefined r0
+    Call3             r4, r2, r0, r4, r5
+    Ret               r4
+L4:
+    NewObjectWithBuffer r4, 8363, 14944
+    GetGlobalObject   r5
+    TryGetById        r7, r5, 12, "Object"
+    GetByIdShort      r6, r7, 13, "values"
+    LoadFromEnvironment r5, r1, 2
+    GetById           r5, r5, 14, "NotSupportedEmail"...
+    Call2             r6, r6, r7, r5
+    GetById           r5, r6, 15, "flatMap"
+    CreateClosure     r3, r3, NCFunction<>45615
+    Call2             r3, r5, r6, r3
+    PutOwnBySlotIdx   r4, r3, 0
+    LoadConstString   r3, "We currently don'"...
+    LoadConstUndefined r0
+    Call3             r3, r2, r0, r3, r4
+    Ret               r3
+L3:
+    LoadConstString   r3, "We couldn't parse"...
+    LoadConstUndefined r0
+    Call2             r3, r2, r0, r3
+    Ret               r3
+L2:
+    LoadConstString   r3, "We couldn't parse"...
+    LoadConstUndefined r0
+    Call2             r3, r2, r0, r3
+    Ret               r3
+L1:
+    LoadFromEnvironment r1, r1, 4
+    LoadConstUndefined r0
+    Call2             r1, r1, r0, r2
+    Ret               r1
+
+Function<getEmailErrorButtonLabel>23552(3 params, 16 registers, 0 numbers, 1 non-pointers):
+    GetParentEnvironment r1, 0
+    LoadParam         r4, 1
+    LoadParam         r2, 2

@@ -1,0 +1,545 @@
+# Wanderlog Android v2.223 - 'Import from anywhere' link classification (Hermes disassembly excerpt)
+
+Function<getUnsupportedImportHost>18971(2 params, 17 registers, 0 numbers, 1 non-pointers):
+    LoadParam         r3, 1
+    GetById           r2, r3, 0, "hostname"
+    GetByIdShort      r1, r2, 1, "toLowerCase"
+    Call1             r5, r1, r2
+    LoadConstStringLongIndex r7, "drive.google.com"
+    StrictEq          r2, r5, r7
+    JmpTrue           L1, r2
+    GetById           r4, r5, 2, "endsWith"
+    GetGlobalObject   r1
+    TryGetById        r1, r1, 3, "HermesInternal"
+    GetByIdShort      r6, r1, 4, "concat"
+    LoadConstString   r1, "."
+    Call2             r1, r6, r1, r7
+    Call2             r2, r4, r5, r1
+L1:
+    GetParentEnvironment r1, 0
+    JmpTrueLong       L2, r2
+    LoadFromEnvironment r2, r1, 0
+    GetById           r4, r2, 5, "isBranchAppLinkHo"...
+    GetById           r2, r3, 0, "hostname"
+    LoadConstUndefined r0
+    Call2             r2, r4, r0, r2
+    JmpFalse          L3, r2
+    LoadFromEnvironment r2, r1, 9
+    Call2             r2, r2, r0, r3
+    LoadConstNull     r0
+    JStrictEqualLong  L4, r2, r0
+L3:
+    LoadConstStringLongIndex r7, "xhslink.com"
+    StrictEq          r2, r5, r7
+    JmpTrue           L5, r2
+    GetById           r4, r5, 2, "endsWith"
+    GetGlobalObject   r3
+    TryGetById        r3, r3, 3, "HermesInternal"
+    GetByIdShort      r6, r3, 4, "concat"
+    LoadConstString   r3, "."
+    Call2             r3, r6, r3, r7
+    Call2             r2, r4, r5, r3
+L5:
+    JmpTrueLong       L6, r2
+    LoadConstStringLongIndex r7, "xhslink.cn"
+    StrictEq          r2, r5, r7
+    JmpTrue           L7, r2
+    GetById           r4, r5, 2, "endsWith"
+    GetGlobalObject   r3
+    TryGetById        r3, r3, 3, "HermesInternal"
+    GetByIdShort      r6, r3, 4, "concat"
+    LoadConstString   r3, "."
+    Call2             r3, r6, r3, r7
+    Call2             r2, r4, r5, r3
+L7:
+    JmpTrueLong       L6, r2
+    LoadConstStringLongIndex r7, "xiaohongshu.com"
+    StrictEq          r2, r5, r7
+    JmpTrue           L8, r2
+    GetById           r4, r5, 2, "endsWith"
+    GetGlobalObject   r3
+    TryGetById        r3, r3, 3, "HermesInternal"
+    GetByIdShort      r6, r3, 4, "concat"
+    LoadConstString   r3, "."
+    Call2             r3, r6, r3, r7
+    Call2             r2, r4, r5, r3
+L8:
+    JmpTrueLong       L6, r2
+    LoadConstStringLongIndex r7, "douyin.com"
+    StrictEq          r2, r5, r7
+    JmpTrue           L9, r2
+    GetById           r4, r5, 2, "endsWith"
+    GetGlobalObject   r3
+    TryGetById        r3, r3, 3, "HermesInternal"
+    GetByIdShort      r6, r3, 4, "concat"
+    LoadConstString   r3, "."
+    Call2             r3, r6, r3, r7
+    Call2             r2, r4, r5, r3
+L9:
+    JmpTrue           L10, r2
+    LoadConstStringLongIndex r7, "lemon8-app.com"
+    StrictEq          r2, r5, r7
+    JmpTrue           L11, r2
+    GetById           r4, r5, 2, "endsWith"
+    GetGlobalObject   r3
+    TryGetById        r3, r3, 3, "HermesInternal"
+    GetByIdShort      r6, r3, 4, "concat"
+    LoadConstString   r3, "."
+    Call2             r3, r6, r3, r7
+    Call2             r2, r4, r5, r3
+L11:
+    JmpTrue           L12, r2
+    LoadConstNull     r0
+    Ret               r0
+L12:
+    LoadFromEnvironment r2, r1, 10
+    GetById           r2, r2, 6, "lemon8"
+    Ret               r2
+L10:
+    LoadFromEnvironment r2, r1, 10
+    GetById           r2, r2, 7, "douyin"
+    Ret               r2
+L6:
+    LoadFromEnvironment r2, r1, 10
+    GetById           r2, r2, 8, "xiaohongshu"
+    Ret               r2
+L4:
+    LoadFromEnvironment r2, r1, 10
+    GetById           r2, r2, 9, "branchAppLink"
+    Ret               r2
+L2:
+    LoadFromEnvironment r1, r1, 10
+    GetById           r1, r1, 10, "googleDrive"
+    Ret               r1
+
+
+Function<getSourceFromParsedURL>18974(2 params, 23 registers, 0 numbers, 3 non-pointers):
+    LoadParam         r5, 1
+    GetById           r4, r5, 0, "hostname"
+    GetByIdShort      r3, r4, 1, "toLowerCase"
+    Call1             r6, r3, r4
+    LoadConstStringLongIndex r9, "instagram.com"
+    StrictEq          r4, r6, r9
+    JmpTrue           L1, r4
+    GetById           r7, r6, 2, "endsWith"
+    GetGlobalObject   r3
+    TryGetById        r3, r3, 3, "HermesInternal"
+    GetByIdShort      r8, r3, 4, "concat"
+    LoadConstString   r3, "."
+    Call2             r3, r8, r3, r9
+    Call2             r4, r7, r6, r3
+L1:
+    JmpTrue           L2, r4
+    LoadConstStringLongIndex r10, "instagr.am"
+    StrictEq          r3, r6, r10
+    JmpTrue           L3, r3
+    GetById           r8, r6, 2, "endsWith"
+    GetGlobalObject   r7
+    TryGetById        r7, r7, 3, "HermesInternal"
+    GetByIdShort      r9, r7, 4, "concat"
+    LoadConstString   r7, "."
+    Call2             r7, r9, r7, r10
+    Call2             r3, r8, r6, r7
+L3:
+    Mov               r4, r3
+L2:
+    GetParentEnvironment r3, 0
+    JmpTrueLong       L4, r4
+    LoadConstStringLongIndex r10, "tiktok.com"
+    StrictEq          r4, r6, r10
+    JmpTrue           L5, r4
+    GetById           r8, r6, 2, "endsWith"
+    GetGlobalObject   r7
+    TryGetById        r7, r7, 3, "HermesInternal"
+    GetByIdShort      r9, r7, 4, "concat"
+    LoadConstString   r7, "."
+    Call2             r7, r9, r7, r10
+    Call2             r4, r8, r6, r7
+L5:
+    JmpTrueLong       L6, r4
+    LoadConstStringLongIndex r10, "youtube.com"
+    StrictEq          r4, r6, r10
+    JmpTrue           L7, r4
+    GetById           r8, r6, 2, "endsWith"
+    GetGlobalObject   r7
+    TryGetById        r7, r7, 3, "HermesInternal"
+    GetByIdShort      r9, r7, 4, "concat"
+    LoadConstString   r7, "."
+    Call2             r7, r9, r7, r10
+    Call2             r4, r8, r6, r7
+L7:
+    JmpTrue           L8, r4
+    LoadConstStringLongIndex r11, "youtu.be"
+    StrictEq          r7, r6, r11
+    JmpTrue           L9, r7
+    GetById           r9, r6, 2, "endsWith"
+    GetGlobalObject   r8
+    TryGetById        r8, r8, 3, "HermesInternal"
+    GetByIdShort      r10, r8, 4, "concat"
+    LoadConstString   r8, "."
+    Call2             r8, r10, r8, r11
+    Call2             r7, r9, r6, r8
+L9:
+    Mov               r4, r7
+L8:
+    JmpTrue           L10, r4
+    LoadConstStringLongIndex r11, "youtube-nocookie."...
+    StrictEq          r7, r6, r11
+    JmpTrue           L11, r7
+    GetById           r9, r6, 2, "endsWith"
+    GetGlobalObject   r8
+    TryGetById        r8, r8, 3, "HermesInternal"
+    GetByIdShort      r10, r8, 4, "concat"
+    LoadConstString   r8, "."
+    Call2             r8, r10, r8, r11
+    Call2             r7, r9, r6, r8
+L11:
+    Mov               r4, r7
+L10:
+    JmpTrueLong       L12, r4
+    LoadConstStringLongIndex r7, "pin.it"
+    LoadConstTrue     r4
+    JStrictEqual      L13, r6, r7
+    GetGlobalObject   r7
+    TryGetById        r9, r7, 5, "RegExp"
+    TryGetById        r7, r7, 3, "HermesInternal"
+    GetByIdShort      r11, r7, 4, "concat"
+    LoadConstStringLongIndex r10, "\.[a-z]{2,}(\.[a-"...
+    LoadConstString   r8, "pinterest"
+    LoadConstStringLongIndex r7, "^([a-z0-9-]+\.)*"
+    Call3             r14, r11, r7, r8, r10
+    CreateThisForNew  r8, r9, 6
+    Mov               r15, r8
+    Construct         r7, r9, 2
+    SelectObject      r8, r8, r7
+    GetByIdShort      r7, r8, 7, "test"
+    Call2             r4, r7, r8, r6
+L13:
+    JmpTrueLong       L14, r4
+    LoadConstStringLongIndex r10, "facebook.com"
+    StrictEq          r4, r6, r10
+    JmpTrue           L15, r4
+    GetById           r8, r6, 2, "endsWith"
+    GetGlobalObject   r7
+    TryGetById        r7, r7, 3, "HermesInternal"
+    GetByIdShort      r9, r7, 4, "concat"
+    LoadConstString   r7, "."
+    Call2             r7, r9, r7, r10
+    Call2             r4, r8, r6, r7
+L15:
+    JmpTrue           L16, r4
+    LoadConstStringLongIndex r7, "fb.com"
+    StrictEq          r4, r6, r7
+L16:
+    JmpTrue           L17, r4
+    LoadConstStringLongIndex r11, "fb.com"
+    StrictEq          r7, r6, r11
+    JmpTrue           L18, r7
+    GetById           r9, r6, 2, "endsWith"
+    GetGlobalObject   r8
+    TryGetById        r8, r8, 3, "HermesInternal"
+    GetByIdShort      r10, r8, 4, "concat"
+    LoadConstString   r8, "."
+    Call2             r8, r10, r8, r11
+    Call2             r7, r9, r6, r8
+L18:
+    Mov               r4, r7
+L17:
+    JmpTrue           L19, r4
+    LoadConstStringLongIndex r11, "fb.watch"
+    StrictEq          r7, r6, r11
+    JmpTrue           L20, r7
+    GetById           r9, r6, 2, "endsWith"
+    GetGlobalObject   r8
+    TryGetById        r8, r8, 3, "HermesInternal"
+    GetByIdShort      r10, r8, 4, "concat"
+    LoadConstString   r8, "."
+    Call2             r8, r10, r8, r11
+    Call2             r7, r9, r6, r8
+L20:
+    Mov               r4, r7
+L19:
+    JmpTrueLong       L21, r4
+    GetById           r7, r5, 0, "hostname"
+    GetByIdShort      r4, r7, 1, "toLowerCase"
+    Call1             r7, r4, r7
+    LoadConstStringLongIndex r11, "maps.google.com"
+    StrictEq          r4, r7, r11
+    JmpTrue           L22, r4
+    GetById           r9, r7, 2, "endsWith"
+    GetGlobalObject   r8
+    TryGetById        r8, r8, 3, "HermesInternal"
+    GetByIdShort      r10, r8, 4, "concat"
+    LoadConstString   r8, "."
+    Call2             r8, r10, r8, r11
+    Call2             r4, r9, r7, r8
+L22:
+    LoadConstTrue     r0
+    JmpTrue           L23, r4
+    LoadConstStringLongIndex r4, "maps.app.goo.gl"
+    LoadConstTrue     r0
+    JStrictEqual      L23, r7, r4
+    CreateRegExp      r8, "^([a-z0-9-]+\.)*g"..., "", 1044
+    GetByIdShort      r4, r8, 7, "test"
+    Call2             r4, r4, r8, r7
+    JmpFalse          L24, r4
+    GetById           r9, r5, 8, "pathname"
+    GetById           r8, r9, 9, "startsWith"
+    LoadConstStringLongIndex r4, "/maps"
+    Call2             r4, r8, r9, r4
+    LoadConstTrue     r0
+    JmpTrue           L23, r4
+L24:
+    LoadConstStringLongIndex r4, "goo.gl"
+    LoadConstFalse    r0
+    JStrictNotEqual   L23, r7, r4
+    GetById           r8, r5, 8, "pathname"
+    GetById           r7, r8, 9, "startsWith"
+    LoadConstStringLongIndex r4, "/maps"
+    Call2             r4, r7, r8, r4
+    LoadConstFalse    r0
+    JmpFalse          L23, r4
+    LoadConstTrue     r0
+L23:
+    JmpTrueLong       L25, r0
+    GetById           r7, r5, 0, "hostname"
+    GetByIdShort      r4, r7, 1, "toLowerCase"
+    Call1             r9, r4, r7
+    LoadConstStringLongIndex r11, "sheets.google.com"
+    StrictEq          r7, r9, r11
+    JmpTrue           L26, r7
+    GetById           r8, r9, 2, "endsWith"
+    GetGlobalObject   r4
+    TryGetById        r4, r4, 3, "HermesInternal"
+    GetByIdShort      r10, r4, 4, "concat"
+    LoadConstString   r4, "."
+    Call2             r4, r10, r4, r11
+    Call2             r7, r8, r9, r4
+L26:
+    LoadConstTrue     r4
+    JmpTrueLong       L27, r7
+    LoadConstStringLongIndex r12, "docs.google.com"
+    StrictEq          r7, r9, r12
+    JmpTrue           L28, r7
+    GetById           r10, r9, 2, "endsWith"
+    GetGlobalObject   r8
+    TryGetById        r8, r8, 3, "HermesInternal"
+    GetByIdShort      r11, r8, 4, "concat"
+    LoadConstString   r8, "."
+    Call2             r8, r11, r8, r12
+    Call2             r7, r10, r9, r8
+L28:
+    JmpFalse          L29, r7
+    GetById           r10, r5, 8, "pathname"
+    GetById           r8, r10, 9, "startsWith"
+    LoadConstStringLongIndex r7, "/spreadsheets"
+    Call2             r7, r8, r10, r7
+    LoadConstTrue     r4
+    JmpTrue           L27, r7
+L29:
+    CreateRegExp      r8, "^([a-z0-9-]+\.)*g"..., "", 1044
+    GetByIdShort      r7, r8, 7, "test"
+    Call2             r7, r7, r8, r9
+    JmpFalse          L30, r7
+    GetById           r10, r5, 8, "pathname"
+    GetById           r9, r10, 9, "startsWith"
+    LoadConstStringLongIndex r8, "/spreadsheets"
+    Call2             r7, r9, r10, r8
+L30:
+    Mov               r4, r7
+L27:
+    JmpTrueLong       L31, r4
+    GetById           r7, r5, 0, "hostname"
+    GetByIdShort      r4, r7, 1, "toLowerCase"
+    Call1             r9, r4, r7
+    LoadConstStringLongIndex r11, "docs.google.com"
+    StrictEq          r7, r9, r11
+    JmpTrue           L32, r7
+    GetById           r8, r9, 2, "endsWith"
+    GetGlobalObject   r4
+    TryGetById        r4, r4, 3, "HermesInternal"
+    GetByIdShort      r10, r4, 4, "concat"
+    LoadConstString   r4, "."
+    Call2             r4, r10, r4, r11
+    Call2             r7, r8, r9, r4
+L32:
+    LoadConstFalse    r4
+    JmpFalse          L33, r7
+    GetById           r9, r5, 8, "pathname"
+    GetById           r8, r9, 9, "startsWith"
+    LoadConstStringLongIndex r7, "/document/"
+    Call2             r4, r8, r9, r7
+L33:
+    JmpTrueLong       L34, r4
+    LoadConstStringLongIndex r10, "redd.it"
+    StrictEq          r4, r6, r10
+    JmpTrue           L35, r4
+    GetById           r8, r6, 2, "endsWith"
+    GetGlobalObject   r7
+    TryGetById        r7, r7, 3, "HermesInternal"
+    GetByIdShort      r9, r7, 4, "concat"
+    LoadConstString   r7, "."
+    Call2             r7, r9, r7, r10
+    Call2             r4, r8, r6, r7
+L35:
+    JmpTrue           L36, r4
+    LoadConstStringLongIndex r11, "reddit.com"
+    StrictEq          r7, r6, r11
+    JmpTrue           L37, r7
+    GetById           r9, r6, 2, "endsWith"
+    GetGlobalObject   r8
+    TryGetById        r8, r8, 3, "HermesInternal"
+    GetByIdShort      r10, r8, 4, "concat"
+    LoadConstString   r8, "."
+    Call2             r8, r10, r8, r11
+    Call2             r7, r9, r6, r8
+L37:
+    Mov               r4, r7
+L36:
+    JmpTrueLong       L38, r4
+    GetGlobalObject   r8
+    TryGetById        r9, r8, 5, "RegExp"
+    TryGetById        r4, r8, 3, "HermesInternal"
+    GetByIdShort      r11, r4, 4, "concat"
+    LoadConstStringLongIndex r10, "\.[a-z]{2,}(\.[a-"...
+    LoadConstString   r7, "tripadvisor"
+    LoadConstStringLongIndex r4, "^([a-z0-9-]+\.)*"
+    Call3             r14, r11, r4, r7, r10
+    CreateThisForNew  r7, r9, 6
+    Mov               r15, r7
+    Construct         r4, r9, 2
+    SelectObject      r7, r7, r4
+    GetByIdShort      r4, r7, 7, "test"
+    Call2             r4, r4, r7, r6
+    JmpTrueLong       L39, r4
+    LoadConstStringLongIndex r11, "chatgpt.com"
+    StrictEq          r4, r6, r11
+    JmpTrue           L40, r4
+    GetById           r9, r6, 2, "endsWith"
+    TryGetById        r7, r8, 3, "HermesInternal"
+    GetByIdShort      r10, r7, 4, "concat"
+    LoadConstString   r7, "."
+    Call2             r7, r10, r7, r11
+    Call2             r4, r9, r6, r7
+L40:
+    JmpTrue           L41, r4
+    LoadConstStringLongIndex r12, "chat.openai.com"
+    StrictEq          r7, r6, r12
+    JmpTrue           L42, r7
+    GetById           r10, r6, 2, "endsWith"
+    TryGetById        r9, r8, 3, "HermesInternal"
+    GetByIdShort      r11, r9, 4, "concat"
+    LoadConstString   r9, "."
+    Call2             r9, r11, r9, r12
+    Call2             r7, r10, r6, r9
+L42:
+    Mov               r4, r7
+L41:
+    JmpTrueLong       L43, r4
+    LoadConstStringLongIndex r11, "twitter.com"
+    StrictEq          r4, r6, r11
+    JmpTrue           L44, r4
+    GetById           r9, r6, 2, "endsWith"
+    TryGetById        r7, r8, 3, "HermesInternal"
+    GetByIdShort      r10, r7, 4, "concat"
+    LoadConstString   r7, "."
+    Call2             r7, r10, r7, r11
+    Call2             r4, r9, r6, r7
+L44:
+    JmpTrue           L45, r4
+    LoadConstStringLongIndex r11, "x.com"
+    StrictEq          r7, r6, r11
+    JmpTrue           L46, r7
+    GetById           r9, r6, 2, "endsWith"
+    TryGetById        r8, r8, 3, "HermesInternal"
+    GetByIdShort      r10, r8, 4, "concat"
+    LoadConstString   r8, "."
+    Call2             r8, r10, r8, r11
+    Call2             r7, r9, r6, r8
+L46:
+    Mov               r4, r7
+L45:
+    JmpTrue           L47, r4
+    LoadFromEnvironment r4, r3, 13
+    JStrictEqual      L48, r6, r4
+    LoadFromEnvironment r4, r3, 9
+    LoadConstUndefined r1
+    Call2             r4, r4, r1, r5
+    LoadConstNull     r1
+    JStrictNotEqual   L49, r4, r1
+    LoadFromEnvironment r4, r3, 7
+    GetById           r4, r4, 10, "ImportFromMediaSo"...
+    GetById           r4, r4, 11, "web"
+    Ret               r4
+L49:
+    LoadFromEnvironment r4, r3, 7
+    GetById           r4, r4, 10, "ImportFromMediaSo"...
+    GetById           r4, r4, 12, "tripPlan"
+    Ret               r4
+L48:
+    LoadFromEnvironment r4, r3, 7
+    GetById           r4, r4, 10, "ImportFromMediaSo"...
+    GetById           r4, r4, 13, "testUnimplemented"
+    Ret               r4
+L47:
+    LoadFromEnvironment r4, r3, 7
+    GetById           r4, r4, 10, "ImportFromMediaSo"...
+    GetById           r4, r4, 14, "twitter"
+    Ret               r4
+L43:
+    LoadFromEnvironment r4, r3, 7
+    GetById           r4, r4, 10, "ImportFromMediaSo"...
+    GetById           r4, r4, 15, "chatgpt"
+    Ret               r4
+L39:
+    LoadFromEnvironment r4, r3, 7
+    GetById           r4, r4, 10, "ImportFromMediaSo"...
+    GetById           r4, r4, 16, "tripadvisor"
+    Ret               r4
+L38:
+    LoadFromEnvironment r4, r3, 7
+    GetById           r4, r4, 10, "ImportFromMediaSo"...
+    GetById           r4, r4, 17, "reddit"
+    Ret               r4
+L34:
+    LoadFromEnvironment r4, r3, 7
+    GetById           r4, r4, 10, "ImportFromMediaSo"...
+    GetById           r4, r4, 18, "googleDocs"
+    Ret               r4
+L31:
+    LoadFromEnvironment r4, r3, 7
+    GetById           r4, r4, 10, "ImportFromMediaSo"...
+    GetById           r4, r4, 19, "googleSheets"
+    Ret               r4
+L25:
+    LoadFromEnvironment r4, r3, 7
+    GetById           r4, r4, 10, "ImportFromMediaSo"...
+    GetById           r4, r4, 20, "googleMaps"
+    Ret               r4
+L21:
+    LoadFromEnvironment r4, r3, 7
+    GetById           r4, r4, 10, "ImportFromMediaSo"...
+    GetById           r4, r4, 21, "facebook"
+    Ret               r4
+L14:
+    LoadFromEnvironment r4, r3, 7
+    GetById           r4, r4, 10, "ImportFromMediaSo"...
+    GetById           r4, r4, 22, "pinterest"
+    Ret               r4
+L12:
+    LoadFromEnvironment r4, r3, 7
+    GetById           r4, r4, 10, "ImportFromMediaSo"...
+    GetById           r4, r4, 23, "youtube"
+    Ret               r4
+L6:
+    LoadFromEnvironment r4, r3, 7
+    GetById           r4, r4, 10, "ImportFromMediaSo"...
+    GetById           r4, r4, 24, "tiktok"
+    Ret               r4
+L4:
+    LoadFromEnvironment r3, r3, 7
+    GetById           r3, r3, 10, "ImportFromMediaSo"...
+    GetById           r3, r3, 25, "instagram"
+    Ret               r3
+
+
