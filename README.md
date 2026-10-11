@@ -91,3 +91,5 @@ flowchart TD
 ```
 
 The diagram is inferred from the APKs, not from source code: the native libraries in the `arm64_v8a` split, the components declared in `AndroidManifest.xml`, and the strings in the compiled Hermes bundle (`assets/index.android.bundle`). Labels in brackets name the file, library or API route where each part shows up.
+
+For the detailed version, see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). It has the full component map, what each APK split contains, the backend API surface, and end-to-end sequence diagrams for app launch and over-the-air updates, sign-in, live trip sync with tripmates, place search and maps, importing bookings from shared files, the AI trip assistant, hotel booking, Pro subscriptions and offline access, trip tracking and journals, notifications, and deep links and analytics.
